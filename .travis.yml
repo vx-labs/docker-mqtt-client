@@ -1,0 +1,11 @@
+sudo: required
+language: c
+services:
+  - docker
+script:
+  - docker build -t vxlabs/mqtt-client:$TRAVIS_COMMIT . ;
+after_success:
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+  - docker push vxlabs/mqtt-client:$TRAVIS_COMMIT;
+  - docker tag vxlabs/mqtt-client:$TRAVIS_COMMIT vxlabs/mqtt-client:latest
+  - docker push vxlabs/mqtt-client:latest

@@ -1,3 +1,3 @@
 all: docker
 docker:
-	docker build  -t vxlabs/iotclient  .
+	docker build  -t vxlabs/mqtt-client  .
