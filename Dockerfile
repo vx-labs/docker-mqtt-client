@@ -1,5 +1,5 @@
 FROM jbonachera/alpine
-ENV IOT_CLIENT_VERSION=v1.2.1
+ENV IOT_CLIENT_VERSION=v1.2.2
 ADD https://github.com/vx-labs/iot-userapi/releases/download/${IOT_CLIENT_VERSION}/wrapper /usr/local/bin/pki-wrap
 RUN chmod +x /usr/local/bin/pki-wrap
 RUN apk -U add mosquitto-clients ca-certificates && \
